@@ -1,0 +1,631 @@
+
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Pretendard",
+                 "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    background: #0d1117;
+    color: #e6edf3;
+    line-height: 1.5;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 24px;
+}
+.page-header {
+    margin-bottom: 32px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #30363d;
+}
+.page-header h1 { margin: 0 0 8px; font-size: 28px; }
+.page-header .subtitle { margin: 0; color: #8b949e; }
+.page-header .location { margin: 8px 0 0; color: #8b949e; font-size: 14px; }
+.back-link {
+    display: inline-block;
+    color: #58a6ff;
+    text-decoration: none;
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+.back-link:hover { text-decoration: underline; }
+
+/* 갤러리 카드 */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 20px;
+}
+.card {
+    display: block;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s, transform 0.15s;
+}
+.card:hover {
+    border-color: #58a6ff;
+    transform: translateY(-2px);
+}
+.card-thumb {
+    width: 100%;
+    height: 180px;
+    background: #21262d center/cover no-repeat;
+    position: relative;
+}
+.card-thumb-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(180deg, transparent 60%, rgba(0,0,0,0.5));
+}
+.card-body { padding: 16px; }
+.card-body h3 { margin: 0 0 8px; font-size: 18px; }
+.card-desc { margin: 0 0 12px; color: #8b949e; font-size: 14px; }
+.card-meta {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 12px;
+    color: #8b949e;
+    font-size: 12px;
+}
+.card-metrics {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    padding-top: 12px;
+    border-top: 1px solid #30363d;
+    font-size: 13px;
+    color: #8b949e;
+}
+.metric strong { color: #e6edf3; font-weight: 600; }
+
+.empty-state {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 80px 24px;
+    color: #8b949e;
+    background: #161b22;
+    border-radius: 8px;
+}
+
+/* 메트릭 그리드 (상세 페이지) */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 12px;
+    margin-bottom: 32px;
+}
+.metric-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    padding: 16px;
+    border-radius: 8px;
+    text-align: center;
+}
+.metric-label { color: #8b949e; font-size: 12px; margin-bottom: 4px; }
+.metric-value { font-size: 22px; font-weight: 600; }
+
+/* 3D 뷰어 */
+.viewer-section { margin-bottom: 32px; }
+.viewer-3d {
+    width: 100%;
+    height: 500px;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    position: relative;
+}
+.viewer-img {
+    width: 100%;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+}
+.viewer-help {
+    text-align: center;
+    color: #8b949e;
+    font-size: 12px;
+    margin-top: 8px;
+}
+.viewer-empty {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    color: #8b949e;
+    background: #161b22;
+    border: 1px dashed #30363d;
+    border-radius: 8px;
+}
+
+/* 옥상 상세 */
+.roof-details-section { margin-bottom: 32px; }
+.roof-details-section h2 { font-size: 18px; }
+.roof-detail {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    padding: 12px 16px;
+    margin-bottom: 8px;
+}
+.roof-detail summary { cursor: pointer; font-weight: 500; }
+.roof-detail-body {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #30363d;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 8px;
+}
+.kv { display: flex; justify-content: space-between; font-size: 14px; }
+.kv span:first-child { color: #8b949e; }
+
+/* [PATCH v9.12] 장애물 목록 */
+.obstacles-detail {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+}
+.obstacles-detail summary {
+    cursor: pointer;
+    font-size: 13px;
+    color: #c9d1d9;
+    font-weight: 500;
+}
+.obstacles-list {
+    margin: 12px 0 0;
+    padding-left: 0;
+    list-style: none;
+}
+.obstacle-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border-bottom: 1px solid #21262d;
+    font-size: 13px;
+}
+.obstacle-row:last-child { border-bottom: none; }
+.obstacle-name {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    margin-right: 12px;
+}
+.obstacle-class {
+    color: #58a6ff;
+    font-weight: 500;
+    font-family: 'Consolas', 'Menlo', monospace;
+    font-size: 12px;
+}
+.obstacle-rest {
+    color: #8b949e;
+    font-size: 12px;
+}
+.obstacle-area {
+    color: #e6edf3;
+    font-weight: 500;
+    white-space: nowrap;
+}
+.obstacles-note {
+    margin: 12px 0 0;
+    padding: 8px 12px;
+    background: #161b22;
+    border-left: 2px solid #58a6ff;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #8b949e;
+}
+.obstacles-empty {
+    margin-top: 12px;
+    padding: 10px 14px;
+    background: #0d1f0d;
+    border-left: 2px solid #3fb950;
+    border-radius: 4px;
+    font-size: 13px;
+    color: #c9d1d9;
+}
+
+/* 다운로드 */
+.downloads h2 { font-size: 18px; }
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #21262d;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    color: #e6edf3;
+    text-decoration: none;
+    margin-right: 8px;
+    margin-bottom: 8px;
+    font-size: 14px;
+}
+.btn:hover { border-color: #58a6ff; }
+
+/* [PATCH v9.6] 법규 진단 섹션 */
+.compliance-section {
+    margin-bottom: 32px;
+    padding: 20px;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+}
+.compliance-section h2 { font-size: 18px; margin: 0 0 12px; }
+.compliance-summary {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 12px;
+}
+.badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-size: 13px;
+    font-weight: 500;
+    background: #21262d;
+}
+.badge.ok { color: #3fb950; }
+.badge.warning { color: #f0883e; }
+.badge.violation { color: #f85149; }
+.badge.manual { color: #58a6ff; }
+.compliance-note {
+    font-size: 13px;
+    color: #8b949e;
+    background: #0d1117;
+    padding: 10px 12px;
+    border-left: 3px solid #58a6ff;
+    border-radius: 4px;
+    margin: 0 0 16px;
+}
+.compliance-category h3 {
+    font-size: 15px;
+    color: #8b949e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 16px 0 8px;
+}
+.compliance-item {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 6px;
+}
+.compliance-item summary {
+    cursor: pointer;
+    font-size: 14px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.compliance-status { font-weight: 600; min-width: 100px; }
+.compliance-code { color: #8b949e; font-size: 12px; min-width: 40px; }
+.compliance-title { flex: 1; }
+.compliance-body {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #30363d;
+    font-size: 13px;
+    line-height: 1.6;
+}
+.compliance-body > div { margin-bottom: 8px; }
+.compliance-source { color: #8b949e; }
+.compliance-text {
+    background: #161b22;
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: #c9d1d9;
+    border-left: 2px solid #30363d;
+    font-style: italic;
+}
+.compliance-req strong, .compliance-finding strong { color: #e6edf3; }
+.compliance-advice {
+    background: #1f3a5f;
+    padding: 8px 12px;
+    border-radius: 4px;
+    color: #c9d1d9;
+    border-left: 2px solid #58a6ff;
+}
+
+/* [PATCH v9.10] 월별 발전량 그래프 */
+.monthly-chart-section {
+    margin-bottom: 32px;
+    padding: 20px;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+}
+.monthly-chart-section h2 { font-size: 18px; margin: 0 0 8px; }
+.monthly-intro {
+    font-size: 13px;
+    color: #8b949e;
+    margin: 0 0 16px;
+    line-height: 1.6;
+}
+.monthly-chart-wrapper {
+    width: 100%;
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 16px 12px;
+    margin-bottom: 16px;
+}
+.monthly-chart-wrapper svg {
+    width: 100%;
+    height: auto;
+    max-height: 360px;
+    display: block;
+}
+.monthly-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 8px;
+    margin-bottom: 12px;
+}
+.m-stat {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    padding: 10px 14px;
+    border-radius: 6px;
+    display: flex;
+    flex-direction: column;
+}
+.m-stat-label {
+    font-size: 11px;
+    color: #8b949e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+.m-stat-value {
+    font-size: 16px;
+    font-weight: 600;
+    color: #e6edf3;
+}
+.monthly-note {
+    font-size: 13px;
+    color: #c9d1d9;
+    background: #0d1f33;
+    border-left: 3px solid #58a6ff;
+    padding: 10px 14px;
+    border-radius: 4px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* [PATCH v9.9] 경제성 분석 (ROI) */
+.roi-section {
+    margin-bottom: 32px;
+    padding: 20px;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+}
+.roi-section h2 { font-size: 18px; margin: 0 0 8px; }
+.roi-intro {
+    font-size: 13px;
+    color: #8b949e;
+    margin: 0 0 16px;
+    line-height: 1.6;
+}
+.roi-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 12px;
+    margin-bottom: 16px;
+}
+.roi-card {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    padding: 14px 16px;
+    border-radius: 6px;
+}
+.roi-card.highlight {
+    border-color: #58a6ff;
+    background: #0d1f33;
+}
+.roi-label {
+    color: #8b949e;
+    font-size: 12px;
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.roi-value {
+    font-size: 22px;
+    font-weight: 600;
+    color: #e6edf3;
+    margin-bottom: 4px;
+}
+.roi-detail {
+    color: #8b949e;
+    font-size: 11px;
+}
+.roi-detail-box {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 12px 16px;
+    margin-bottom: 12px;
+}
+.roi-detail-box summary {
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+}
+.roi-yearly-table {
+    margin-top: 12px;
+    overflow-x: auto;
+}
+.roi-yearly-table table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+}
+.roi-yearly-table th, .roi-yearly-table td {
+    padding: 6px 10px;
+    text-align: right;
+    border-bottom: 1px solid #21262d;
+}
+.roi-yearly-table th:first-child, .roi-yearly-table td:first-child {
+    text-align: left;
+}
+.roi-yearly-table th {
+    color: #8b949e;
+    font-weight: 500;
+    border-bottom: 1px solid #30363d;
+}
+.roi-note {
+    font-size: 13px;
+    color: #c9d1d9;
+    background: #261f0f;
+    border-left: 3px solid #f0883e;
+    padding: 10px 14px;
+    border-radius: 4px;
+    margin: 0;
+    line-height: 1.6;
+}
+
+/* [PATCH v9.8] 계산 근거 섹션 */
+.methodology-section {
+    margin-bottom: 32px;
+    padding: 20px;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+}
+.methodology-section h2 { font-size: 18px; margin: 0 0 8px; }
+.method-intro {
+    font-size: 13px;
+    color: #8b949e;
+    margin: 0 0 16px;
+    line-height: 1.6;
+}
+.method-grid {
+    display: grid;
+    gap: 8px;
+}
+.method-card {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 12px 16px;
+}
+.method-card summary {
+    cursor: pointer;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 14px;
+}
+.method-icon { font-size: 18px; }
+.method-title { flex: 1; font-weight: 500; }
+.method-source {
+    color: #8b949e;
+    font-size: 12px;
+    background: #161b22;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid #30363d;
+}
+.method-body {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #30363d;
+    font-size: 13px;
+    line-height: 1.7;
+}
+.method-formula {
+    background: #161b22;
+    padding: 10px 14px;
+    border-radius: 4px;
+    border-left: 3px solid #58a6ff;
+    color: #c9d1d9;
+    font-family: 'Consolas', 'Menlo', monospace;
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+.method-note {
+    color: #c9d1d9;
+}
+.method-note a { color: #58a6ff; text-decoration: none; }
+.method-note a:hover { text-decoration: underline; }
+.method-footer {
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid #30363d;
+}
+.method-footer h3 {
+    font-size: 14px;
+    color: #8b949e;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin: 0 0 8px;
+}
+.tools-list {
+    margin: 0;
+    padding-left: 20px;
+    font-size: 13px;
+    color: #c9d1d9;
+}
+.tools-list li { margin-bottom: 4px; }
+.tools-list strong { color: #e6edf3; }
+
+/* [PATCH v9.7] 시공 체크리스트 */
+.checklist-item {
+    background: #0d1117;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin-bottom: 6px;
+}
+.checklist-item summary {
+    cursor: pointer;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-size: 14px;
+}
+.checklist-code { color: #8b949e; font-size: 12px; min-width: 40px; }
+.checklist-title { flex: 1; font-weight: 500; }
+.checklist-when {
+    color: #8b949e;
+    font-size: 12px;
+    background: #161b22;
+    padding: 2px 8px;
+    border-radius: 4px;
+    border: 1px solid #30363d;
+}
+.checklist-body {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #30363d;
+    font-size: 13px;
+    line-height: 1.6;
+}
+.checklist-body > div { margin-bottom: 8px; }
+.checklist-desc { color: #c9d1d9; }
+.compliance-disclaimer {
+    margin-top: 24px;
+    padding: 12px 16px;
+    background: #261f0f;
+    border-left: 3px solid #f0883e;
+    border-radius: 4px;
+    color: #c9d1d9;
+    font-size: 13px;
+}
+
+.page-footer {
+    margin-top: 64px;
+    padding-top: 16px;
+    border-top: 1px solid #30363d;
+    text-align: center;
+    color: #8b949e;
+    font-size: 13px;
+}
+.page-footer a { color: #58a6ff; }

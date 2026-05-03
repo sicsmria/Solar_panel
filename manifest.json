@@ -1,0 +1,22 @@
+[
+  {
+    "slug": "2022020320211122wellness-center-sama",
+    "title": "2022020320211122Wellness center Sama.ifc",
+    "description": "대구 - 패널 21장",
+    "created_at": "2026-05-03T17:04:15",
+    "metrics": {
+      "roof_count": 1,
+      "total_area_m2": 137.76,
+      "panel_count": 21,
+      "capacity_kw": 9.45,
+      "annual_kwh": 13401,
+      "annual_saving_krw": 2144275,
+      "annual_co2_ton": 5.682
+    },
+    "location": {
+      "label": "대구",
+      "latitude": 35.8714,
+      "longitude": 128.6014
+    }
+  }
+]

@@ -1,0 +1,100 @@
+[
+  {
+    "roof_name": "IfcSlab/Floor:Concrete-Commercial 362mm:552411",
+    "roof_type": "flat",
+    "identification": {
+      "method": "ifc_slab_topmost",
+      "ifc_class": "IfcSlab",
+      "is_external": false,
+      "predefined_type": "FLOOR"
+    },
+    "gross_roof_area_m2": 137.763,
+    "obstacle_area_m2": 0,
+    "net_available_area_m2": 137.763,
+    "usable_area_m2": 96.434,
+    "panel_count_estimated": 21,
+    "panel_count_visualized": 21,
+    "total_capacity_kw": 9.45,
+    "annual_generation_kwh": 13401.7,
+    "annual_saving_krw": 2144275,
+    "annual_co2_reduction_kg": 5682.3,
+    "annual_co2_reduction_ton": 5.682,
+    "common_area_coverage_percent": 26.8,
+    "confidence": "high",
+    "methodology": {
+      "roof_identification": "ifc_slab_topmost",
+      "roof_classification": "normal_dominance",
+      "pitched_face_placement": "local_planar_grid_v6",
+      "generation": [
+        "pvgis_pvcalc_v5_3"
+      ]
+    },
+    "obstacles": [],
+    "roof_faces": [
+      {
+        "area_m2": 137.763,
+        "tilt_deg": 30.0,
+        "azimuth_deg": 180.0,
+        "pvgis_aspect_deg": 0,
+        "panel_count": 21,
+        "placement_diagnostics": null
+      }
+    ],
+    "config": {
+      "output_dir": "C:/Users/ssy18/Desktop/bim_poc_result",
+      "normal_z_threshold_flat": 0.95,
+      "normal_z_threshold_pitched": 0.3,
+      "roof_z_tolerance": 0.5,
+      "obstacle_z_tolerance": 1.0,
+      "obstacle_max_area_ratio": 0.5,
+      "accepted_ifc_classes": [
+        "IfcRoof",
+        "IfcSlab"
+      ],
+      "flat_roof_dominance_ratio": 0.6,
+      "panel_width_m": 1.134,
+      "panel_height_m": 1.722,
+      "panel_capacity_kw": 0.45,
+      "panel_thickness_m": 0.05,
+      "panel_tilt_deg_flat": 30.0,
+      "panel_spacing": 0.3,
+      "panel_elevation_m": 0.08,
+      "pitched_panel_margin_max": 0.5,
+      "pitched_panel_margin_min": 0.1,
+      "pitched_panel_margin_ratio": 0.05,
+      "pitched_panel_offset": 0.05,
+      "area_usage_ratio": 0.7,
+      "panel_inside_roof_ratio_threshold": 0.99,
+      "winter_solstice_sun_altitude_deg": 29,
+      "disable_shadow_spacing": false,
+      "latitude": 35.8714,
+      "longitude": 128.6014,
+      "model_south_azimuth_deg": 180,
+      "pvgis_aspect_deg": 0,
+      "use_pvgis_api": true,
+      "annual_yield_per_kw": 1200,
+      "system_loss_percent": 14,
+      "pv_tech_choice": "crystSi",
+      "electricity_price_krw_per_kwh": 160,
+      "co2_factor_kg_per_kwh": 0.424,
+      "installation_cost_krw_per_kwp": 1500000,
+      "analysis_years": 20,
+      "annual_degradation_rate": 0.005,
+      "common_area_annual_use_kwh": 50000
+    },
+    "monthly_kwh": [
+      1195.5,
+      1174.7,
+      1357.4,
+      1286.3,
+      1283.3,
+      1063.2,
+      904.2,
+      968.8,
+      924.1,
+      1127.5,
+      1013.6,
+      1103.2
+    ]
+  }
+]
