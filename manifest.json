@@ -1,9 +1,29 @@
 [
   {
+    "slug": "largebuilding",
+    "title": "LargeBuilding.ifc",
+    "description": "대구 - 패널 28장",
+    "created_at": "2026-05-03T17:51:26",
+    "metrics": {
+      "roof_count": 1,
+      "total_area_m2": 154.44,
+      "panel_count": 28,
+      "capacity_kw": 12.6,
+      "annual_kwh": 17869,
+      "annual_saving_krw": 2859034,
+      "annual_co2_ton": 7.576
+    },
+    "location": {
+      "label": "대구",
+      "latitude": 35.8714,
+      "longitude": 128.6014
+    }
+  },
+  {
     "slug": "2022020320211122wellness-center-sama",
     "title": "2022020320211122Wellness center Sama.ifc",
     "description": "대구 - 패널 21장",
-    "created_at": "2026-05-03T17:04:15",
+    "created_at": "2026-05-03T17:25:38",
     "metrics": {
       "roof_count": 1,
       "total_area_m2": 137.76,
