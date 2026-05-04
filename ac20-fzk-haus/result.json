@@ -1,0 +1,200 @@
+[
+  {
+    "roof_name": "IfcSlab/Dach-1",
+    "roof_type": "pitched",
+    "identification": {
+      "method": "ifc_slab_external",
+      "ifc_class": "IfcSlab",
+      "is_external": null,
+      "predefined_type": "ROOF"
+    },
+    "gross_roof_area_m2": 0.0,
+    "obstacle_area_m2": 0.0,
+    "net_available_area_m2": 0.0,
+    "usable_area_m2": 0.0,
+    "panel_count_estimated": 0,
+    "panel_count_visualized": 0,
+    "total_capacity_kw": 0.0,
+    "annual_generation_kwh": 0.0,
+    "annual_saving_krw": 0,
+    "annual_co2_reduction_kg": 0.0,
+    "annual_co2_reduction_ton": 0.0,
+    "common_area_coverage_percent": 0.0,
+    "confidence": "low",
+    "methodology": {
+      "roof_identification": "ifc_slab_external",
+      "roof_classification": "normal_dominance",
+      "pitched_face_placement": "local_planar_grid_v6",
+      "generation": []
+    },
+    "obstacles": [],
+    "roof_faces": [
+      {
+        "area_m2": 82.561,
+        "tilt_deg": 30.0,
+        "azimuth_deg": 0.0,
+        "pvgis_aspect_deg": -180.0,
+        "panel_count": 0,
+        "placement_diagnostics": null
+      }
+    ],
+    "config": {
+      "output_dir": "C:/Users/ssy18/Desktop/bim_poc_result",
+      "normal_z_threshold_flat": 0.95,
+      "normal_z_threshold_pitched": 0.3,
+      "roof_z_tolerance": 0.5,
+      "obstacle_z_tolerance": 1.0,
+      "obstacle_max_area_ratio": 0.5,
+      "accepted_ifc_classes": [
+        "IfcRoof",
+        "IfcSlab"
+      ],
+      "flat_roof_dominance_ratio": 0.6,
+      "panel_width_m": 1.134,
+      "panel_height_m": 1.722,
+      "panel_capacity_kw": 0.45,
+      "panel_thickness_m": 0.05,
+      "panel_tilt_deg_flat": 30.0,
+      "panel_spacing": 0.3,
+      "panel_elevation_m": 0.08,
+      "pitched_panel_margin_max": 0.5,
+      "pitched_panel_margin_min": 0.1,
+      "pitched_panel_margin_ratio": 0.05,
+      "pitched_panel_offset": 0.05,
+      "area_usage_ratio": 0.7,
+      "panel_inside_roof_ratio_threshold": 0.99,
+      "winter_solstice_sun_altitude_deg": 29,
+      "disable_shadow_spacing": false,
+      "latitude": 35.8714,
+      "longitude": 128.6014,
+      "model_south_azimuth_deg": 180,
+      "pvgis_aspect_deg": 0,
+      "use_pvgis_api": true,
+      "annual_yield_per_kw": 1200,
+      "system_loss_percent": 14,
+      "pv_tech_choice": "crystSi",
+      "electricity_price_krw_per_kwh": 160,
+      "co2_factor_kg_per_kwh": 0.424,
+      "installation_cost_krw_per_kwp": 1500000,
+      "analysis_years": 20,
+      "annual_degradation_rate": 0.005,
+      "common_area_annual_use_kwh": 50000
+    },
+    "monthly_kwh": null
+  },
+  {
+    "roof_name": "IfcSlab/Dach-2",
+    "roof_type": "pitched",
+    "identification": {
+      "method": "ifc_slab_external",
+      "ifc_class": "IfcSlab",
+      "is_external": null,
+      "predefined_type": "ROOF"
+    },
+    "gross_roof_area_m2": 82.561,
+    "obstacle_area_m2": 0.0,
+    "net_available_area_m2": 82.561,
+    "usable_area_m2": 57.793,
+    "panel_count_estimated": 29,
+    "panel_count_visualized": 16,
+    "total_capacity_kw": 7.2,
+    "annual_generation_kwh": 10210.8,
+    "annual_saving_krw": 1633733,
+    "annual_co2_reduction_kg": 4329.4,
+    "annual_co2_reduction_ton": 4.329,
+    "common_area_coverage_percent": 20.4,
+    "confidence": "high",
+    "methodology": {
+      "roof_identification": "ifc_slab_external",
+      "roof_classification": "normal_dominance",
+      "pitched_face_placement": "local_planar_grid_v6",
+      "generation": [
+        "pvgis_pvcalc_v5_3"
+      ]
+    },
+    "obstacles": [],
+    "roof_faces": [
+      {
+        "area_m2": 82.561,
+        "tilt_deg": 30.0,
+        "azimuth_deg": 180.0,
+        "pvgis_aspect_deg": 0.0,
+        "panel_count": 16,
+        "placement_diagnostics": {
+          "face_area_3d": 82.561,
+          "panel_count_target": 29,
+          "margin_used": 0.454,
+          "polygon_2d_area": 82.561,
+          "polygon_2d_area_after_buffer": 65.804,
+          "bounds_uv": {
+            "u_size": 12.091,
+            "v_size": 5.442
+          },
+          "rejection_reason": null,
+          "rotation_euler_deg": [
+            30.0,
+            0.0,
+            0.0
+          ],
+          "candidates_tried": 16
+        }
+      }
+    ],
+    "config": {
+      "output_dir": "C:/Users/ssy18/Desktop/bim_poc_result",
+      "normal_z_threshold_flat": 0.95,
+      "normal_z_threshold_pitched": 0.3,
+      "roof_z_tolerance": 0.5,
+      "obstacle_z_tolerance": 1.0,
+      "obstacle_max_area_ratio": 0.5,
+      "accepted_ifc_classes": [
+        "IfcRoof",
+        "IfcSlab"
+      ],
+      "flat_roof_dominance_ratio": 0.6,
+      "panel_width_m": 1.134,
+      "panel_height_m": 1.722,
+      "panel_capacity_kw": 0.45,
+      "panel_thickness_m": 0.05,
+      "panel_tilt_deg_flat": 30.0,
+      "panel_spacing": 0.3,
+      "panel_elevation_m": 0.08,
+      "pitched_panel_margin_max": 0.5,
+      "pitched_panel_margin_min": 0.1,
+      "pitched_panel_margin_ratio": 0.05,
+      "pitched_panel_offset": 0.05,
+      "area_usage_ratio": 0.7,
+      "panel_inside_roof_ratio_threshold": 0.99,
+      "winter_solstice_sun_altitude_deg": 29,
+      "disable_shadow_spacing": false,
+      "latitude": 35.8714,
+      "longitude": 128.6014,
+      "model_south_azimuth_deg": 180,
+      "pvgis_aspect_deg": 0,
+      "use_pvgis_api": true,
+      "annual_yield_per_kw": 1200,
+      "system_loss_percent": 14,
+      "pv_tech_choice": "crystSi",
+      "electricity_price_krw_per_kwh": 160,
+      "co2_factor_kg_per_kwh": 0.424,
+      "installation_cost_krw_per_kwp": 1500000,
+      "analysis_years": 20,
+      "annual_degradation_rate": 0.005,
+      "common_area_annual_use_kwh": 50000
+    },
+    "monthly_kwh": [
+      910.8,
+      895.0,
+      1034.2,
+      980.0,
+      977.7,
+      810.0,
+      688.9,
+      738.1,
+      704.0,
+      859.0,
+      772.3,
+      840.5
+    ]
+  }
+]
