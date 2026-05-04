@@ -1,5 +1,25 @@
 [
   {
+    "slug": "ifc2x3_samplecastle",
+    "title": "Ifc2x3_SampleCastle.ifc",
+    "description": "대구 - 패널 54장",
+    "created_at": "2026-05-04T20:23:52",
+    "metrics": {
+      "roof_count": 150,
+      "total_area_m2": 1426.01,
+      "panel_count": 54,
+      "capacity_kw": 24.3,
+      "annual_kwh": 33884,
+      "annual_saving_krw": 5421506,
+      "annual_co2_ton": 14.371
+    },
+    "location": {
+      "label": "대구",
+      "latitude": 35.8714,
+      "longitude": 128.6014
+    }
+  },
+  {
     "slug": "ac20-fzk-haus",
     "title": "AC20-FZK-Haus.ifc",
     "description": "대구 - 패널 16장",
