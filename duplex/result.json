@@ -1,0 +1,135 @@
+[
+  {
+    "roof_name": "IfcSlab/Basic Roof:Live Roof over Wood Joist Flat Roof:184483",
+    "roof_type": "flat",
+    "identification": {
+      "method": "ifc_slab_external",
+      "ifc_class": "IfcSlab",
+      "is_external": null,
+      "predefined_type": "ROOF"
+    },
+    "gross_roof_area_m2": 132.926,
+    "obstacle_area_m2": 2.734,
+    "net_available_area_m2": 130.192,
+    "usable_area_m2": 91.134,
+    "panel_count_estimated": 27,
+    "panel_count_visualized": 27,
+    "total_capacity_kw": 12.15,
+    "annual_generation_kwh": 17230.8,
+    "annual_saving_krw": 2756925,
+    "annual_co2_reduction_kg": 7305.9,
+    "annual_co2_reduction_ton": 7.306,
+    "common_area_coverage_percent": 34.5,
+    "confidence": "high",
+    "methodology": {
+      "roof_identification": "ifc_slab_external",
+      "roof_classification": "normal_dominance",
+      "pitched_face_placement": "local_planar_grid_v6",
+      "generation": [
+        "pvgis_pvcalc_v5_3"
+      ]
+    },
+    "obstacles": [
+      {
+        "name": "IfcWindow/M_Skylight:1180 x 1170mm:1180 x 1170mm:185337",
+        "footprint_area_m2": 1.367,
+        "method": "xy_projected_top_polygon"
+      },
+      {
+        "name": "IfcWindow/M_Skylight:1180 x 1170mm:1180 x 1170mm:185718",
+        "footprint_area_m2": 1.367,
+        "method": "xy_projected_top_polygon"
+      }
+    ],
+    "roof_faces": [
+      {
+        "area_m2": 132.926,
+        "tilt_deg": 30.0,
+        "azimuth_deg": 180.0,
+        "pvgis_aspect_deg": 0,
+        "panel_count": 27,
+        "placement_diagnostics": null
+      }
+    ],
+    "config": {
+      "output_dir": "C:/Users/ssy18/Desktop/bim_poc_result",
+      "normal_z_threshold_flat": 0.95,
+      "normal_z_threshold_pitched": 0.3,
+      "roof_z_tolerance": 0.5,
+      "obstacle_z_tolerance": 1.0,
+      "obstacle_max_area_ratio": 0.5,
+      "accepted_ifc_classes": [
+        "IfcRoof",
+        "IfcSlab"
+      ],
+      "flat_roof_dominance_ratio": 0.6,
+      "enable_korean_roof_heuristic": true,
+      "korean_roof_keywords": [
+        "옥상",
+        "A1-12-06A",
+        "RF111",
+        "RF110",
+        "RF211",
+        "PRF1",
+        "PRS1",
+        "rooftop",
+        "roofing"
+      ],
+      "korean_roof_exclude_keywords": [
+        "계단",
+        "Landing",
+        "stair",
+        "Stair",
+        "테라스",
+        "발코니",
+        "balcony",
+        "현장타설"
+      ],
+      "korean_roof_max_z_drop": 5.0,
+      "korean_roof_z_group_tolerance": 1.0,
+      "panel_width_m": 1.134,
+      "panel_height_m": 1.722,
+      "panel_capacity_kw": 0.45,
+      "panel_thickness_m": 0.05,
+      "panel_tilt_deg_flat": 30.0,
+      "panel_spacing": 0.3,
+      "panel_elevation_m": 0.08,
+      "pitched_panel_margin_max": 0.5,
+      "pitched_panel_margin_min": 0.1,
+      "pitched_panel_margin_ratio": 0.05,
+      "pitched_panel_offset": 0.05,
+      "area_usage_ratio": 0.7,
+      "panel_inside_roof_ratio_threshold": 0.99,
+      "winter_solstice_sun_altitude_deg": 29,
+      "disable_shadow_spacing": false,
+      "latitude": 35.8714,
+      "longitude": 128.6014,
+      "model_south_azimuth_deg": 180,
+      "pvgis_aspect_deg": 0,
+      "use_pvgis_api": true,
+      "annual_yield_per_kw": 1200,
+      "system_loss_percent": 14,
+      "pv_tech_choice": "crystSi",
+      "electricity_price_krw_per_kwh": 160,
+      "co2_factor_kg_per_kwh": 0.424,
+      "installation_cost_krw_per_kwp": 1500000,
+      "analysis_years": 20,
+      "annual_degradation_rate": 0.005,
+      "common_area_annual_use_kwh": 50000
+    },
+    "monthly_kwh": [
+      1537.0,
+      1510.3,
+      1745.2,
+      1653.8,
+      1649.9,
+      1366.9,
+      1162.6,
+      1245.6,
+      1188.1,
+      1449.7,
+      1303.2,
+      1418.4
+    ]
+  }
+]
